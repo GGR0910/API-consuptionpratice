@@ -3,6 +3,7 @@ import MySQLdb
 conn= MySQLdb.connect(host='127.0.0.1', user='root', password='Gogoll90@', port=3306)
 cursor= conn.cursor()
 
+#Save information at db
 def salvar_cliente(requestjson,CPF,nomecliente,CEP):
     CPF=int(CPF)
     rua= requestjson['logradouro']
