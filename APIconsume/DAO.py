@@ -16,3 +16,8 @@ def salvar_cliente(requestjson,CPF,nomecliente,CEP):
                    f'{ddd})')
     conn.commit()
     return True
+
+def ler_cliente(nome):
+    cursor.execute(f'Select * from API.APICEP where nomecliente = "{nome}"')
+    dados=cursor.fetchall()
+    return dados

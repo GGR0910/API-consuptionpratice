@@ -1,4 +1,4 @@
-from DAO import salvar_cliente
+from APIconsume.DAO import salvar_cliente
 import requests
 import string
 
