@@ -14,7 +14,7 @@ def ler_api(CEP):
         print(f"Rua: {requestjson['logradouro']}")
         print(f"Bairro: {requestjson['bairro']}")
         print(f"Cidade: {requestjson['localidade']}")
-        return(requestjson)
+        return requestjson
 
 #Save information at db
 def salvar_cliente(requestjson,CPF,nomecliente,CEP):
@@ -31,7 +31,7 @@ def salvar_cliente(requestjson,CPF,nomecliente,CEP):
     return True
 
 #Read db info
-def ler_cliente(nome):
-    cursor.execute(f'Select * from API.APICEP where nomecliente = "{nome}"')
+def ler_cliente(CPF):
+    cursor.execute(f'Select * from API.APICEP where CPF = {CPF}')
     dados=cursor.fetchall()
     return dados
